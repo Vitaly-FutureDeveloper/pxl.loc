@@ -1,0 +1,125 @@
+.glass-block--closed{
+	display: none;
+}
+
+.glass-block--opened{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	vertical-align: middle;
+
+	height: 100vh;
+	padding-left: 350px;
+
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.glass-block__rewiews{
+	width: 670px;
+	padding: 0;
+
+	& .rewiews-quote-title{
+		position: relative;
+
+		font-family: Oswald;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 56px;
+		line-height: 64px;
+		width: 700px;
+
+		color: #FFFFFF;
+
+		&::before{
+			content: "«";
+			position: absolute;
+			top: -2;
+			left: -35px;
+
+			width: 15px;
+			height: 15px;
+		}
+	}
+
+	& .rewiews-quote-text{
+		font-family: Oswald;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 24px;
+		line-height: 32px;
+
+		text-align: right;
+		text-transform: capitalize;
+
+		color: #FFFFFF;
+	}
+}
+
+.glass-block__rewiews-quote{
+	margin-bottom: 160px;
+}
+.glass-block__rewiews-video{
+	position: relative;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+
+	& .rewiews__video-icon-wrapper{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 120px;
+		height: 120px;
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		box-sizing: border-box;
+		border-radius: 50%;
+
+		&:hover,
+		&:focus{
+				animation-name: videohover-color;
+				animation-duration: 1.5s;
+				animation-fill-mode: forwards;
+
+				& .rewiews__video-icon{
+					animation-name: videohover-padding;
+					animation-duration: 1.5s;
+					animation-fill-mode: forwards;
+				}
+			}
+	}
+	& .rewiews__video-icon{
+		position: absolute;
+		top: 50px;
+		left: 50px;
+	}
+
+	& .rewiews__video-item{
+		position: absolute;
+		top: 25px;
+		left: 15%;
+
+
+		font-family: Oswald;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 140%;
+
+		color: #FFFFFF;
+	}
+}
+
+.glass-block__advantages{
+	width: 480px;
+
+	& .advantages-item{
+		font-family: Merriweather;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 24px;
+
+		color: #FFFFFF;
+	}
+}

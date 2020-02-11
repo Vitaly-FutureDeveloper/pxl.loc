@@ -1,3 +1,55 @@
+@-webkit-keyframes videohover-color {
+  0% {
+    border-color: rgba(255, 255, 255, 0.3);
+    width: 120px;
+    height: 120px;
+    top: 0;
+    left: 0;
+  }
+  100% {
+    border-color: rgba(255, 255, 255, 0.8);
+    width: 150px;
+    height: 150px;
+    top: -15px;
+    left: -15px;
+  }
+}
+@keyframes videohover-color {
+  0% {
+    border-color: rgba(255, 255, 255, 0.3);
+    width: 120px;
+    height: 120px;
+    top: 0;
+    left: 0;
+  }
+  100% {
+    border-color: rgba(255, 255, 255, 0.8);
+    width: 150px;
+    height: 150px;
+    top: -15px;
+    left: -15px;
+  }
+}
+@-webkit-keyframes videohover-padding {
+  0% {
+    top: 50px;
+    left: 50px;
+  }
+  100% {
+    top: 65px;
+    left: 65px;
+  }
+}
+@keyframes videohover-padding {
+  0% {
+    top: 50px;
+    left: 50px;
+  }
+  100% {
+    top: 65px;
+    left: 65px;
+  }
+}
 @font-face {
   font-family: "Oswald";
   src: url("fonts/oswald-bold.ttf") format("ttf");
@@ -90,10 +142,6 @@ body {
   width: 1920px;
   height: 1080px;
   margin: 0 auto;
-  background-color: white;
-  background-image: url("../img/MaskGroup.png");
-  background-repeat: no-repeat;
-  background-position: 0 0;
   font-family: "PT Sans", Oswald, Merriweather;
 }
 .page-header {
@@ -113,7 +161,7 @@ body {
           justify-content: space-between;
   -webkit-box-align: center;
           align-items: center;
-  min-height: 1017px;
+  min-height: 100vh;
   padding: 0;
   margin: 0;
   padding: 56px 0;
@@ -178,4 +226,140 @@ body {
   text-transform: lowercase;
   color: #FFFFFF;
   opacity: 0.4;
+}
+.page-main {
+  background-color: white;
+  background-image: url("../img/MaskGroup.png");
+  background-repeat: no-repeat;
+}
+.page-main__header {
+  position: absolute;
+  width: 480px;
+  height: 32px;
+  left: 480px;
+  top: 45px;
+}
+.page-main__header .page-main__header-title {
+  font-family: Oswald;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+  text-transform: lowercase;
+  color: #FFFFFF;
+  opacity: 0.7;
+}
+.glass-block--closed {
+  display: none;
+}
+.glass-block--opened {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  -webkit-box-align: center;
+          align-items: center;
+  vertical-align: middle;
+  height: 100vh;
+  padding-left: 350px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.glass-block__rewiews {
+  width: 670px;
+  padding: 0;
+}
+.glass-block__rewiews .rewiews-quote-title {
+  position: relative;
+  font-family: Oswald;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 56px;
+  line-height: 64px;
+  width: 700px;
+  color: #FFFFFF;
+}
+.glass-block__rewiews .rewiews-quote-title::before {
+  content: "«";
+  position: absolute;
+  top: -2;
+  left: -35px;
+  width: 15px;
+  height: 15px;
+}
+.glass-block__rewiews .rewiews-quote-text {
+  font-family: Oswald;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: right;
+  text-transform: capitalize;
+  color: #FFFFFF;
+}
+.glass-block__rewiews-quote {
+  margin-bottom: 160px;
+}
+.glass-block__rewiews-video {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+}
+.glass-block__rewiews-video .rewiews__video-icon-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+.glass-block__rewiews-video .rewiews__video-icon-wrapper:hover,
+.glass-block__rewiews-video .rewiews__video-icon-wrapper:focus {
+  -webkit-animation-name: videohover-color;
+          animation-name: videohover-color;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.glass-block__rewiews-video .rewiews__video-icon-wrapper:hover .rewiews__video-icon,
+.glass-block__rewiews-video .rewiews__video-icon-wrapper:focus .rewiews__video-icon {
+  -webkit-animation-name: videohover-padding;
+          animation-name: videohover-padding;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.glass-block__rewiews-video .rewiews__video-icon {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.glass-block__rewiews-video .rewiews__video-item {
+  position: absolute;
+  top: 25px;
+  left: 15%;
+  font-family: Oswald;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.glass-block__advantages {
+  width: 480px;
+}
+.glass-block__advantages .advantages-item {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
 }
