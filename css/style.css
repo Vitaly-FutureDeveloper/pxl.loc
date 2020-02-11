@@ -1,0 +1,16 @@
+/*
+@font-face{
+	font-weight: bold;
+	font-family: "Oswald Bold";
+	font-style: normal;
+	src: url("fonts/oswald-bold.ttf") format("ttf"),
+	url("fonts/oswald-bold.ttf") format("ttf");
+}
+@font-face{
+	font-family: "Oswald BoldItalic";
+	src: url("fonts/oswald-bolditalic.ttf") format("ttf");
+}
+*/
+body {
+  background-color: red;
+}
