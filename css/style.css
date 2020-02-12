@@ -128,7 +128,7 @@ body.background--gradient {
           animation-timing-function: linear;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  background-image: radial-gradient(circle at 99vw 70vh, white, #e6e6e6);
+  background-image: radial-gradient(circle at 99vw 70vh, white, #dcdcdc);
 }
 @-webkit-keyframes block-hide {
   0% {
@@ -312,6 +312,10 @@ input[type='radio'].visually-hidden {
 }
 .page-main__header-title--glass {
   display: block;
+}
+.page-main__header-title--workers {
+  display: block;
+  color: #070500;
 }
 .glass-block--closed {
   position: relative;
@@ -640,7 +644,7 @@ input[type='radio'].visually-hidden {
 /* Переключатели на слайдеры */
 .workers-block--toggles {
   position: absolute;
-  bottom: 65px;
+  bottom: 125px;
   right: -50px;
   display: -webkit-box;
   display: flex;
@@ -721,12 +725,18 @@ input[type='radio'].visually-hidden {
   cursor: pointer;
   border: none;
 }
+.page-footer__scroll-btn--black {
+  color: #070500;
+}
 .page-footer__table {
   position: relative;
   left: 0;
   bottom: 3vh;
   border-collapse: collapse;
   color: #FFFFFF;
+}
+.page-footer__table--closed {
+  visibility: hidden;
 }
 .page-footer__table th {
   position: relative;
