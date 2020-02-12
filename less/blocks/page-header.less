@@ -7,7 +7,19 @@
 
 	padding: 0;
 	margin: 0;
+
+	&--glass{
+		background: rgba(7, 5, 0, 0.8);
+	}
+
+	&--transparent{
+		background: transparent;
+		& .page-header__logo path{
+			fill: black;
+		}
+	}
 }
+
 .page-header-wrapper{
 	display: flex;
 	flex-direction: column;
@@ -31,8 +43,6 @@
 	line-height: 32px;
 
 	text-transform: uppercase;
-
-	color: #FFFFFF;
 }
 
 .main-nav__list-item{
@@ -51,10 +61,21 @@
 		opacity: 0.4;
 	}
 }
-
+.page-header--transparent{
+	& .main-nav__list-item a{
+		color: #070500;
+		opacity: 1;
+	}
+}
 .page-header__contacts-button{
-	.bottons();
+	.buttons();
 	margin-bottom: 25px;
+}
+.page-header--transparent{
+	& .page-header__contacts-button {
+		color: #070500;
+		border-color: #070500;
+	}
 }
 
 .page-header__contacts-social-list{

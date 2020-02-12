@@ -150,6 +150,13 @@ body {
   margin: 0 auto;
   font-family: "PT Sans", Oswald, Merriweather;
 }
+body.background--gradient {
+  background-image: radial-gradient(circle at 99vw 70vh, white, #f0f0f0);
+}
+img {
+  width: 100%;
+  height: auto;
+}
 .page-header {
   float: left;
   width: 250px;
@@ -157,6 +164,15 @@ body {
   background: rgba(7, 5, 0, 0.3);
   padding: 0;
   margin: 0;
+}
+.page-header--glass {
+  background: rgba(7, 5, 0, 0.8);
+}
+.page-header--transparent {
+  background: transparent;
+}
+.page-header--transparent .page-header__logo path {
+  fill: black;
 }
 .page-header-wrapper {
   display: -webkit-box;
@@ -183,7 +199,6 @@ body {
   font-size: 20px;
   line-height: 32px;
   text-transform: uppercase;
-  color: #FFFFFF;
 }
 .main-nav__list-item {
   margin-bottom: 32px;
@@ -197,6 +212,10 @@ body {
   text-transform: uppercase;
   color: #FFFFFF;
   opacity: 0.4;
+}
+.page-header--transparent .main-nav__list-item a {
+  color: #070500;
+  opacity: 1;
 }
 .page-header__contacts-button {
   background: transparent;
@@ -213,6 +232,10 @@ body {
   box-sizing: border-box;
   cursor: pointer;
   margin-bottom: 25px;
+}
+.page-header--transparent .page-header__contacts-button {
+  color: #070500;
+  border-color: #070500;
 }
 .page-header__contacts-social-list {
   list-style: none;
@@ -240,6 +263,10 @@ body {
   background-color: white;
   background-image: url("../img/MaskGroup.png");
   background-repeat: no-repeat;
+  background-size: contain;
+}
+.background--gradient .page-main {
+  background: transparent;
 }
 .page-main__header {
   position: absolute;
@@ -270,7 +297,7 @@ body {
   vertical-align: middle;
   height: 100vh;
   padding-left: 120px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .glass-block__rewiews {
   width: 670px;
@@ -372,25 +399,88 @@ body {
   line-height: 24px;
   color: #FFFFFF;
 }
-.workers-block--closed {
+.workers-block--closed,
+.worker__slider {
   display: none;
+}
+.worker__slider--active {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: center;
+          align-items: center;
+  background: transparent;
+}
+.worker__slider-prewiew {
+  margin-left: 240px;
+}
+.worker__slider-prewiew h3 {
+  font-family: Oswald;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 56px;
+  line-height: 64px;
+  color: #070500;
+  margin-bottom: 170px;
+}
+.worker__slider-prewiew p {
+  font-family: Oswald;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+  color: #070500;
+}
+.worker__slider-text-wrap {
+  width: 480px;
+}
+.worker__slider-text-wrap p {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #070500;
+}
+.workers-block--toggles {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  width: 704px;
+  height: 360px;
+}
+.workers-block__button-wrapper {
+  width: 255;
+  height: 400;
 }
 .clear {
   clear: both;
 }
 .page-footer {
-  position: relative;
-  bottom: 0;
+  position: fixed;
+  bottom: -3vh;
   left: 0;
-  height: 11vh;
-  padding-left: 180px;
+  height: 10vh;
+  width: 100vw;
+  margin-left: 250px;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
           flex-direction: row;
   justify-content: space-around;
-  background: rgba(7, 5, 0, 0.3);
+  -webkit-box-align: center;
+          align-items: center;
+  background: transparent;
 }
 .page-footer__scroll-btn {
   background: transparent;
@@ -411,7 +501,7 @@ body {
 .page-footer__table {
   position: relative;
   left: 0;
-  bottom: 50px;
+  bottom: 3vh;
   border-collapse: collapse;
   color: #FFFFFF;
 }
@@ -434,6 +524,10 @@ body {
 }
 .page-footer__table th,
 .page-footer__table td {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   padding-left: 50px;
+}
+/*Если открыта панель слайдеров О НАС*/
+.page-header--transparent .page-footer__table {
+  display: none;
 }

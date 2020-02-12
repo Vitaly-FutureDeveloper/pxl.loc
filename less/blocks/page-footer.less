@@ -3,30 +3,32 @@
 }
 
 .page-footer{
-	position: relative;
-	bottom: 0;
+	position: fixed;
+	bottom: -3vh;
 	left: 0;
 
-	height: 11vh;
+	height: 10vh;
+	width: 100vw;
 
-	padding-left: 180px;
+	margin-left: 250px;
 
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	align-items: center;
 
-	background: rgba(7, 5, 0, 0.3);
+	background: transparent;
 }
 
 .page-footer__scroll-btn{
-	.bottons();
+	.buttons();
 	border: none;
 }
 
 .page-footer__table{
 	position: relative;
 	left: 0;
-	bottom: 50px;
+	bottom: 3vh;
 	border-collapse: collapse;
 
 	color: #FFFFFF;
@@ -53,7 +55,15 @@
 
 	& th,
 	& td{
-		padding-bottom: 50px;
+		padding-bottom: 30px;
 		padding-left: 50px;
+	}
+}
+
+/*Если открыта панель слайдеров О НАС*/
+
+.page-header--transparent{
+	& .page-footer__table {
+		display: none;
 	}
 }
