@@ -42,6 +42,8 @@
 		font-size: 32px;
 		line-height: 40px;
 
+		.animation__page-footer-th-roll(2s, ease);
+
 		&::after{
 			content: "";
 
@@ -53,6 +55,8 @@
 			height: 1px;
 
 			background-color: white;
+
+			.animation__page-footer-table-after(2s, ease);
 		}
 	}
 	& td{
@@ -66,6 +70,7 @@
 
 		color: #FFFFFF;
 		opacity: 0.7;
+		//.animation__text-show(1s, linear)
 	}
 
 	& th,
@@ -77,7 +82,7 @@
 
 /*Если открыта панель слайдеров О НАС*/
 
-.page-header--transparent{
+.background--gradient{
 	& .page-footer__table {
 		display: none;
 	}

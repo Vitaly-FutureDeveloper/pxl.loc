@@ -48,7 +48,7 @@
 @keyframes glass-block--open{
 	0%{
 		opacity: 0;
-		bottom: -50vh;
+		bottom: -50%;
 		left: 0;
 	}
 	100%{
@@ -58,9 +58,104 @@
 	}
 }
 
-//position: relative;
+position: relative;
 
 animation-name: glass-block--open;
 animation-duration: @time;
 animation-timing-function: ease;
+}
+/*
+//Анимация блоков при нажатии ссылки О НАС <<
+*/
+
+/*
+//Анимации таблицы >>
+*/
+.animation__page-footer-table-after(@time, @type){
+	@keyframes table-after{
+		from{ //Подругому, потому что: тестовое задание - надо показать, что умею по разному
+			width: 1px;
+			opacity: 0.2;
+		}
+		50%{
+			opacity: 1;
+		}
+		to{
+			width: 82px;
+		}
+	}
+	animation-name: table-after;
+	animation-duration: @time;
+	animation-timing-function: @type;
+}
+
+.animation__page-footer-th-roll(@time, @type){
+	@keyframes table-roll{
+		0%{
+			bottom: -20px;
+			opacity: 0.2;
+		}
+		50%{
+			opacity: 1;
+		}
+		100%{
+			bottom: 0;
+		}
+	}
+	animation-name: table-roll;
+	animation-duration: @time;
+	animation-timing-function: @type;
+}
+
+//Попытка сделать анимацию появления текста - не удалась
+.animation__text-show(@time, @type){
+
+	@keyframes text-show{
+		0%{
+			width: 0%;
+		}
+		100%{
+			width: 100%;
+		}
+	}
+	animation-name: text-show;
+	animation-duration: @time;
+	animation-timing-function: @type;
+}
+/*
+//Анимации таблицы <<
+*/
+
+/*
+//Анимация перехода на блок workers-block >>
+*/
+
+.animation__block-show(@time, @type){
+	position: relative;
+	@keyframes text-show{
+		0%{
+			bottom: -50%;
+		}
+		100%{
+			bottom: 0;
+		}
+	}
+	animation-name: text-show;
+	animation-duration: @time;
+	animation-timing-function: @type;
+}
+
+.animation__block-hide(@time, @type){
+	position: relative;
+	@keyframes block-hide{
+		0%{
+			top: 0%;
+		}
+		100%{
+			top: 100%;
+		}
+	}
+	animation-name: block-hide;
+	animation-duration: @time;
+	animation-timing-function: @type;
 }

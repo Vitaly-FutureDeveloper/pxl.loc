@@ -7,6 +7,18 @@
 /*
 //Анимация блоков при нажатии ссылки О НАС >>
 */
+/*
+//Анимация блоков при нажатии ссылки О НАС <<
+*/
+/*
+//Анимации таблицы >>
+*/
+/*
+//Анимации таблицы <<
+*/
+/*
+//Анимация перехода на блок workers-block >>
+*/
 @font-face {
   font-family: "Oswald";
   src: url("fonts/oswald-bold.ttf") format("ttf");
@@ -100,9 +112,13 @@ body {
   height: 1080px;
   margin: 0 auto;
   font-family: "PT Sans", Oswald, Merriweather;
+  background-color: white;
+  background-image: url("../img/MaskGroup.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 body.background--gradient {
-  background-image: radial-gradient(circle at 99vw 70vh, white, #f0f0f0);
+  background-image: radial-gradient(circle at 99vw 70vh, white, #e6e6e6);
 }
 img {
   width: 100%;
@@ -230,15 +246,17 @@ input[type='radio'].visually-hidden {
   color: #070500;
   opacity: 0.4;
 }
-.page-main {
-  background-color: white;
-  background-image: url("../img/MaskGroup.png");
-  background-repeat: no-repeat;
-  background-size: contain;
+/*.page-main{
+	background-color: white;
+	background-image: url("../img/MaskGroup.png");
+	background-repeat: no-repeat;
+	background-size: contain;
 }
-.background--gradient .page-main {
-  background: transparent;
-}
+.background--gradient {
+	& .page-main{
+		background: transparent;
+	}
+}*/
 .page-main__header {
   position: absolute;
   width: 480px;
@@ -257,7 +275,30 @@ input[type='radio'].visually-hidden {
   opacity: 0.7;
 }
 .glass-block--closed {
+  position: relative;
+  -webkit-animation-name: block-hide;
+          animation-name: block-hide;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
   display: none;
+}
+@-webkit-keyframes block-hide {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes block-hide {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
 }
 .glass-block--opened {
   position: relative;
@@ -304,8 +345,8 @@ input[type='radio'].visually-hidden {
   color: #FFFFFF;
 }
 .glass-block__rewiews-quote {
-  position: relative;
   margin-bottom: 160px;
+  position: relative;
   -webkit-animation-name: glass-block--open;
           animation-name: glass-block--open;
   -webkit-animation-duration: 2s;
@@ -316,7 +357,7 @@ input[type='radio'].visually-hidden {
 @-webkit-keyframes glass-block--open {
   0% {
     opacity: 0;
-    bottom: -50vh;
+    bottom: -50%;
     left: 0;
   }
   100% {
@@ -328,7 +369,7 @@ input[type='radio'].visually-hidden {
 @keyframes glass-block--open {
   0% {
     opacity: 0;
-    bottom: -50vh;
+    bottom: -50%;
     left: 0;
   }
   100% {
@@ -338,7 +379,6 @@ input[type='radio'].visually-hidden {
   }
 }
 .glass-block__rewiews-video {
-  position: relative;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -346,6 +386,7 @@ input[type='radio'].visually-hidden {
           flex-direction: row;
   -webkit-box-pack: start;
           justify-content: flex-start;
+  position: relative;
   -webkit-animation-name: glass-block--open;
           animation-name: glass-block--open;
   -webkit-animation-duration: 2.1s;
@@ -356,7 +397,7 @@ input[type='radio'].visually-hidden {
 @keyframes glass-block--open {
   0% {
     opacity: 0;
-    bottom: -50vh;
+    bottom: -50%;
     left: 0;
   }
   100% {
@@ -462,8 +503,8 @@ input[type='radio'].visually-hidden {
   color: #FFFFFF;
 }
 .glass-block__advantages {
-  position: relative;
   width: 480px;
+  position: relative;
   -webkit-animation-name: glass-block--open;
           animation-name: glass-block--open;
   -webkit-animation-duration: 2s;
@@ -482,7 +523,7 @@ input[type='radio'].visually-hidden {
 @keyframes glass-block--open {
   0% {
     opacity: 0;
-    bottom: -50vh;
+    bottom: -50%;
     left: 0;
   }
   100% {
@@ -504,6 +545,29 @@ input[type='radio'].visually-hidden {
   -webkit-box-align: center;
           align-items: center;
   background: transparent;
+  position: relative;
+  -webkit-animation-name: text-show;
+          animation-name: text-show;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+@-webkit-keyframes text-show {
+  0% {
+    bottom: -50%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+@keyframes text-show {
+  0% {
+    bottom: -50%;
+  }
+  100% {
+    bottom: 0;
+  }
 }
 .worker__slider-prewiew {
   margin-left: 240px;
@@ -631,6 +695,36 @@ input[type='radio'].visually-hidden {
   font-weight: 300;
   font-size: 32px;
   line-height: 40px;
+  -webkit-animation-name: table-roll;
+          animation-name: table-roll;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+@-webkit-keyframes table-roll {
+  0% {
+    bottom: -20px;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+@keyframes table-roll {
+  0% {
+    bottom: -20px;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 0;
+  }
 }
 .page-footer__table th::after {
   content: "";
@@ -640,6 +734,36 @@ input[type='radio'].visually-hidden {
   width: 82px;
   height: 1px;
   background-color: white;
+  -webkit-animation-name: table-after;
+          animation-name: table-after;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+@-webkit-keyframes table-after {
+  from {
+    width: 1px;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    width: 82px;
+  }
+}
+@keyframes table-after {
+  from {
+    width: 1px;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    width: 82px;
+  }
 }
 .page-footer__table td {
   font-family: Oswald;
@@ -657,6 +781,6 @@ input[type='radio'].visually-hidden {
   padding-left: 50px;
 }
 /*Если открыта панель слайдеров О НАС*/
-.page-header--transparent .page-footer__table {
+.background--gradient .page-footer__table {
   display: none;
 }
