@@ -115,7 +115,7 @@ body {
   background-color: white;
   background-image: url("../img/MaskGroup.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100vw 100vh;
 }
 body.background--gradient {
   background-image: url("../img/MaskGroup.png");
@@ -226,6 +226,10 @@ input[type='radio'].visually-hidden {
   color: #FFFFFF;
   opacity: 0.4;
 }
+.page-header--glass .main-nav__list-item a {
+  color: #FFFFFF;
+  opacity: 1;
+}
 .page-header--transparent .main-nav__list-item a {
   color: #070500;
   opacity: 1;
@@ -293,8 +297,10 @@ input[type='radio'].visually-hidden {
   height: 32px;
   left: 480px;
   top: 45px;
+  z-index: 10;
 }
-.page-main__header .page-main__header-title {
+.page-main__header-title {
+  display: none;
   font-family: Oswald;
   font-style: normal;
   font-weight: 300;
@@ -303,6 +309,9 @@ input[type='radio'].visually-hidden {
   text-transform: lowercase;
   color: #FFFFFF;
   opacity: 0.7;
+}
+.page-main__header-title--glass {
+  display: block;
 }
 .glass-block--closed {
   position: relative;
@@ -337,6 +346,7 @@ input[type='radio'].visually-hidden {
   height: 100vh;
   padding-left: 120px;
   background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
 }
 .glass-block__rewiews {
   width: 670px;
@@ -630,7 +640,7 @@ input[type='radio'].visually-hidden {
 /* Переключатели на слайдеры */
 .workers-block--toggles {
   position: absolute;
-  bottom: -60px;
+  bottom: 65px;
   right: -50px;
   display: -webkit-box;
   display: flex;
@@ -693,6 +703,7 @@ input[type='radio'].visually-hidden {
   -webkit-box-align: center;
           align-items: center;
   background: transparent;
+  z-index: 10;
 }
 .page-footer__scroll-btn {
   background: transparent;
@@ -811,5 +822,8 @@ input[type='radio'].visually-hidden {
 }
 /*Если открыта панель слайдеров О НАС*/
 .background--gradient .page-footer__table {
+  display: none;
+}
+.video-popup {
   display: none;
 }

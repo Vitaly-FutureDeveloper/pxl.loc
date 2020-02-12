@@ -16,16 +16,23 @@
 	left: 480px;
 	top: 45px;
 
-	& .page-main__header-title{
-		font-family: Oswald;
-		font-style: normal;
-		font-weight: 300;
-		font-size: 24px;
-		line-height: 32px;
-	
-		text-transform: lowercase;
-	
-		color: #FFFFFF;
-		opacity: 0.7;
+	z-index: 10;
+}
+.page-main__header-title{
+	display: none;
+
+	font-family: Oswald;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 24px;
+	line-height: 32px;
+
+	text-transform: lowercase;
+
+	color: #FFFFFF;
+	opacity: 0.7;
+
+	&--glass{
+		display: block;
 	}
 }
