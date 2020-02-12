@@ -1,60 +1,11 @@
 /*
 //Анимация при наведении на кнопку видео >>
 */
-@-webkit-keyframes videohover-color {
-  0% {
-    border-color: rgba(255, 255, 255, 0.3);
-    width: 120px;
-    height: 120px;
-    top: 0;
-    left: 0;
-  }
-  100% {
-    border-color: rgba(255, 255, 255, 0.8);
-    width: 150px;
-    height: 150px;
-    top: -15px;
-    left: -15px;
-  }
-}
-@keyframes videohover-color {
-  0% {
-    border-color: rgba(255, 255, 255, 0.3);
-    width: 120px;
-    height: 120px;
-    top: 0;
-    left: 0;
-  }
-  100% {
-    border-color: rgba(255, 255, 255, 0.8);
-    width: 150px;
-    height: 150px;
-    top: -15px;
-    left: -15px;
-  }
-}
-@-webkit-keyframes videohover-padding {
-  0% {
-    top: 50px;
-    left: 50px;
-  }
-  100% {
-    top: 65px;
-    left: 65px;
-  }
-}
-@keyframes videohover-padding {
-  0% {
-    top: 50px;
-    left: 50px;
-  }
-  100% {
-    top: 65px;
-    left: 65px;
-  }
-}
 /*
 //Анимация при наведении на кнопку видео <<
+*/
+/*
+//Анимация блоков при нажатии ссылки О НАС >>
 */
 @font-face {
   font-family: "Oswald";
@@ -157,6 +108,21 @@ img {
   width: 100%;
   height: auto;
 }
+.visually-hidden:not(:focus):not(:active),
+input[type='checkbox'].visually-hidden,
+input[type='radio'].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 .page-header {
   float: left;
   width: 250px;
@@ -166,7 +132,7 @@ img {
   margin: 0;
 }
 .page-header--glass {
-  background: rgba(7, 5, 0, 0.8);
+  background: rgba(7, 5, 0, 0.7);
 }
 .page-header--transparent {
   background: transparent;
@@ -210,6 +176,7 @@ img {
   font-size: 16px;
   line-height: 24px;
   text-transform: uppercase;
+  text-decoration: none;
   color: #FFFFFF;
   opacity: 0.4;
 }
@@ -259,6 +226,10 @@ img {
   color: #FFFFFF;
   opacity: 0.4;
 }
+.page-header--transparent .page-header__contacts-social-item a {
+  color: #070500;
+  opacity: 0.4;
+}
 .page-main {
   background-color: white;
   background-image: url("../img/MaskGroup.png");
@@ -289,6 +260,7 @@ img {
   display: none;
 }
 .glass-block--opened {
+  position: relative;
   display: -webkit-box;
   display: flex;
   justify-content: space-around;
@@ -332,7 +304,38 @@ img {
   color: #FFFFFF;
 }
 .glass-block__rewiews-quote {
+  position: relative;
   margin-bottom: 160px;
+  -webkit-animation-name: glass-block--open;
+          animation-name: glass-block--open;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+@-webkit-keyframes glass-block--open {
+  0% {
+    opacity: 0;
+    bottom: -50vh;
+    left: 0;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+    left: 0;
+  }
+}
+@keyframes glass-block--open {
+  0% {
+    opacity: 0;
+    bottom: -50vh;
+    left: 0;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+    left: 0;
+  }
 }
 .glass-block__rewiews-video {
   position: relative;
@@ -343,6 +346,24 @@ img {
           flex-direction: row;
   -webkit-box-pack: start;
           justify-content: flex-start;
+  -webkit-animation-name: glass-block--open;
+          animation-name: glass-block--open;
+  -webkit-animation-duration: 2.1s;
+          animation-duration: 2.1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+@keyframes glass-block--open {
+  0% {
+    opacity: 0;
+    bottom: -50vh;
+    left: 0;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+    left: 0;
+  }
 }
 .glass-block__rewiews-video .rewiews__video-icon-wrapper {
   position: absolute;
@@ -363,6 +384,38 @@ img {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
+@-webkit-keyframes videohover-color {
+  0% {
+    border-color: rgba(255, 255, 255, 0.3);
+    width: 120px;
+    height: 120px;
+    top: 0;
+    left: 0;
+  }
+  100% {
+    border-color: rgba(255, 255, 255, 0.8);
+    width: 150px;
+    height: 150px;
+    top: -15px;
+    left: -15px;
+  }
+}
+@keyframes videohover-color {
+  0% {
+    border-color: rgba(255, 255, 255, 0.3);
+    width: 120px;
+    height: 120px;
+    top: 0;
+    left: 0;
+  }
+  100% {
+    border-color: rgba(255, 255, 255, 0.8);
+    width: 150px;
+    height: 150px;
+    top: -15px;
+    left: -15px;
+  }
+}
 .glass-block__rewiews-video .rewiews__video-icon-wrapper:hover .rewiews__video-icon,
 .glass-block__rewiews-video .rewiews__video-icon-wrapper:focus .rewiews__video-icon {
   -webkit-animation-name: videohover-padding;
@@ -371,6 +424,26 @@ img {
           animation-duration: 1.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+@-webkit-keyframes videohover-padding {
+  0% {
+    top: 50px;
+    left: 50px;
+  }
+  100% {
+    top: 65px;
+    left: 65px;
+  }
+}
+@keyframes videohover-padding {
+  0% {
+    top: 50px;
+    left: 50px;
+  }
+  100% {
+    top: 65px;
+    left: 65px;
+  }
 }
 .glass-block__rewiews-video .rewiews__video-icon {
   position: absolute;
@@ -389,7 +462,14 @@ img {
   color: #FFFFFF;
 }
 .glass-block__advantages {
+  position: relative;
   width: 480px;
+  -webkit-animation-name: glass-block--open;
+          animation-name: glass-block--open;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
 }
 .glass-block__advantages .advantages-item {
   font-family: Merriweather;
@@ -398,6 +478,18 @@ img {
   font-size: 16px;
   line-height: 24px;
   color: #FFFFFF;
+}
+@keyframes glass-block--open {
+  0% {
+    opacity: 0;
+    bottom: -50vh;
+    left: 0;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+    left: 0;
+  }
 }
 .workers-block--closed,
 .worker__slider {
@@ -415,6 +507,7 @@ img {
 }
 .worker__slider-prewiew {
   margin-left: 240px;
+  width: 265px;
 }
 .worker__slider-prewiew h3 {
   font-family: Oswald;
@@ -444,23 +537,49 @@ img {
   line-height: 24px;
   color: #070500;
 }
+/* Переключатели на слайдеры */
 .workers-block--toggles {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -60px;
+  right: -50px;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
           flex-direction: row;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+          justify-content: center;
   width: 704px;
   height: 360px;
 }
 .workers-block__button-wrapper {
-  width: 255;
-  height: 400;
+  display: none;
+}
+.workers-block__button-wrapper--active {
+  display: block;
+  width: 30%;
+  height: 90%;
+}
+.workers-block__button-wrapper--active:nth-child(2) {
+  position: relative;
+  top: -10px;
+}
+.workers-block__button-wrapper button {
+  background: transparent;
+  color: white;
+  font-family: Oswald;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: lowercase;
+  padding: 15px;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin-right: -40px;
+  margin-left: -10px;
 }
 .clear {
   clear: both;
@@ -506,11 +625,21 @@ img {
   color: #FFFFFF;
 }
 .page-footer__table th {
+  position: relative;
   font-family: Merriweather;
   font-style: normal;
   font-weight: 300;
   font-size: 32px;
   line-height: 40px;
+}
+.page-footer__table th::after {
+  content: "";
+  position: absolute;
+  top: 55px;
+  left: 65px;
+  width: 82px;
+  height: 1px;
+  background-color: white;
 }
 .page-footer__table td {
   font-family: Oswald;

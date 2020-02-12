@@ -13,6 +13,7 @@
 
 .worker__slider-prewiew{
 	margin-left: 240px;
+	width: 265px;
 
 	& h3{
 		font-family: Oswald;
@@ -50,19 +51,37 @@
 	}
 }
 
+/* Переключатели на слайдеры */
 .workers-block--toggles{
 	position: absolute;
-	bottom: 0;
-	right: 0;
+	bottom: -60px;
+	right: -50px;
 
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
 
 	width:704px;
 	height:360px;
 }
 .workers-block__button-wrapper{
-	width: 255;
-	height: 400;
+	display: none;
+
+	&--active{
+		display: block;
+
+		width: 30%;
+		height: 90%;
+
+		&:nth-child(2){
+			position: relative;
+			top: -10px;
+		}
+	}
+
+	& button {
+		.buttons();
+		margin-right:-40px;
+		margin-left:-10px;
+	}
 }

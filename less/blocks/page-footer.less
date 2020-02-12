@@ -34,11 +34,26 @@
 	color: #FFFFFF;
 
 	& th{
+		position: relative;
+
 		font-family: Merriweather;
 		font-style: normal;
 		font-weight: 300;
 		font-size: 32px;
 		line-height: 40px;
+
+		&::after{
+			content: "";
+
+			position: absolute;
+			top: 55px;
+			left: 65px;
+
+			width: 82px;
+			height: 1px;
+
+			background-color: white;
+		}
 	}
 	& td{
 		font-family: Oswald;

@@ -3,6 +3,8 @@
 }
 
 .glass-block--opened{
+	position: relative;
+
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -12,6 +14,8 @@
 	padding-left: 120px;
 
 	background-color: rgba(0, 0, 0, 0.6);
+
+
 }
 
 .glass-block__rewiews{
@@ -56,7 +60,10 @@
 }
 
 .glass-block__rewiews-quote{
+	position: relative;
 	margin-bottom: 160px;
+
+	.animation__glass-block--up(2s);
 }
 .glass-block__rewiews-video{
 	position: relative;
@@ -64,6 +71,8 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
+
+	.animation__glass-block--up(2.1s);
 
 	& .rewiews__video-icon-wrapper{
 		position: absolute;
@@ -77,14 +86,10 @@
 
 		&:hover,
 		&:focus{
-				animation-name: videohover-color;
-				animation-duration: 1.5s;
-				animation-fill-mode: forwards;
+				.animation__glass-block--video-hover-color();
 
 				& .rewiews__video-icon{
-					animation-name: videohover-padding;
-					animation-duration: 1.5s;
-					animation-fill-mode: forwards;
+					.animation__glass-block--video-hover-padding();
 				}
 			}
 	}
@@ -111,6 +116,8 @@
 }
 
 .glass-block__advantages{
+	position: relative;
+
 	width: 480px;
 
 	& .advantages-item{
@@ -122,4 +129,6 @@
 
 		color: #FFFFFF;
 	}
+
+	.animation__glass-block--up(2s);
 }

@@ -15,13 +15,13 @@ scaffolding.less стр. 98
 Так же, перекрасит логотип, в шапке, в чёрный цвет, через CSS.
 page-header.less стр. 15
 -->
-<body class="background--gradient">
+<body> <!-- class="background--gradient">-->
 
 	<!--
 		page-header--glass - задний фон, при открытии glass-block -- rgba(7, 5, 0, 0.6)
 		page-header--transparent - задний фон, при открытии workers-block -- transparent
 	-->
-	<header class="page-header page-header--glass page-header--transparent">
+	<header class="page-header page-header--glass ">
 		<div class="page-header-wrapper">
 		<div class="page-header__logo-wrapper">
 			<svg class="page-header__logo" width="128" height="106" viewBox="0 0 128 106" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +78,7 @@ page-header.less стр. 15
 				<h1 class="page-main__header-title">О нас</h1>
 			</header>
 
-		<div class="glass-block glass-block--closed">
+		<div class="glass-block glass-block--opened">
 
 			<section class="glass-block__rewiews">
 
@@ -89,7 +89,7 @@ page-header.less стр. 15
 				
 				<div class="glass-block__rewiews-video">
 					<div class="rewiews__video-icon-wrapper">
-						<svg class="rewiews__video-icon width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<svg class="rewiews__video-icon" width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M17 10L0.500001 19.5263L0.500002 0.47372L17 10Z" fill="white"/>
 						</svg>
 					</div>
@@ -106,7 +106,7 @@ page-header.less стр. 15
 
 		</div>
 
-		<div class="workers-block workers-block--opened">
+		<div class="workers-block workers-block--closed">
 			<section class="worker__slider worker__slider--active">
 				<div class="worker__slider-prewiew">
 					<h3>Дарья Горшакова</h3>
@@ -268,19 +268,19 @@ page-header.less стр. 15
 			</section>
 
 			<section class="workers-block--toggles">
-				<div class="workers-block__button-wrapper">
+				<div class="workers-block__button-wrapper workers-block__button-wrapper--active">
 					<button>
 						<span class="visually-hidden">Дарья Горшакова</span>
 						<img src="img/redman.png" alt="Подробнее о Дарье Горшаковой">
 					</button>
 				</div>
-				<div class="workers-block__button-wrapper">
+				<div class="workers-block__button-wrapper workers-block__button-wrapper--active">
 					<button>
 						<span class="visually-hidden">Дарья Горшакова</span>
 						<img src="img/girl-1.png" alt="Подробнее о Дарье Горшаковой">
 					</button>
 				</div>
-				<div class="workers-block__button-wrapper">
+				<div class="workers-block__button-wrapper workers-block__button-wrapper--active">
 					<button>
 						<span class="visually-hidden">Дарья Горшакова</span>
 						<img src="img/girl-2.png" alt="Подробнее о Дарье Горшаковой">
