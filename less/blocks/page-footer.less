@@ -3,21 +3,25 @@
 }
 
 .page-footer{
-	position: fixed;
-	bottom: -3vh;
-	left: 0;
+	display: none;
 
-	height: 10vh;
-	width: 100vw;
-
-	margin-left: 250px;
-
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-
-	background: transparent;
+	&--opened{
+		position: fixed;
+		bottom: -3vh;
+		left: 0;
+	
+		height: 10vh;
+		width: 100vw;
+	
+		margin-left: 250px;
+	
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+	
+		background: transparent;
+	}
 }
 
 .page-footer__scroll-btn{

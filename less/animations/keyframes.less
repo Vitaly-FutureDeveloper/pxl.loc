@@ -149,13 +149,20 @@ animation-timing-function: ease;
 	position: relative;
 	@keyframes block-hide{
 		0%{
-			top: 0%;
+			//top: 0%;
+			background-position-y: 0;
+			background-image: url("../img/MaskGroup.png");
+			//background-image: radial-gradient(circle at 99vw 70vh, white, rgb(230, 230, 230));
 		}
 		100%{
-			top: 100%;
+			//top: 100%;
+			background-position-y: -1080px;
+			background-image: url("../img/MaskGroup.png");
+			//background-image: radial-gradient(circle at 99vw 70vh, white, rgb(230, 230, 230));
 		}
 	}
 	animation-name: block-hide;
 	animation-duration: @time;
 	animation-timing-function: @type;
+	animation-fill-mode: forwards;
 }

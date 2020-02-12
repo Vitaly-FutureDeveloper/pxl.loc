@@ -118,7 +118,37 @@ body {
   background-size: contain;
 }
 body.background--gradient {
+  background-image: url("../img/MaskGroup.png");
+  position: relative;
+  -webkit-animation-name: block-hide;
+          animation-name: block-hide;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   background-image: radial-gradient(circle at 99vw 70vh, white, #e6e6e6);
+}
+@-webkit-keyframes block-hide {
+  0% {
+    background-position-y: 0;
+    background-image: url("../img/MaskGroup.png");
+  }
+  100% {
+    background-position-y: -1080px;
+    background-image: url("../img/MaskGroup.png");
+  }
+}
+@keyframes block-hide {
+  0% {
+    background-position-y: 0;
+    background-image: url("../img/MaskGroup.png");
+  }
+  100% {
+    background-position-y: -1080px;
+    background-image: url("../img/MaskGroup.png");
+  }
 }
 img {
   width: 100%;
@@ -282,22 +312,18 @@ input[type='radio'].visually-hidden {
           animation-duration: 1s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   display: none;
-}
-@-webkit-keyframes block-hide {
-  0% {
-    top: 0%;
-  }
-  100% {
-    top: 100%;
-  }
 }
 @keyframes block-hide {
   0% {
-    top: 0%;
+    background-position-y: 0;
+    background-image: url("../img/MaskGroup.png");
   }
   100% {
-    top: 100%;
+    background-position-y: -1080px;
+    background-image: url("../img/MaskGroup.png");
   }
 }
 .glass-block--opened {
@@ -649,6 +675,9 @@ input[type='radio'].visually-hidden {
   clear: both;
 }
 .page-footer {
+  display: none;
+}
+.page-footer--opened {
   position: fixed;
   bottom: -3vh;
   left: 0;

@@ -15,13 +15,13 @@ scaffolding.less стр. 98
 Так же, перекрасит логотип, в шапке, в чёрный цвет, через CSS.
 page-header.less стр. 15
 -->
-<body class="background--gradient"> <!-- class="background--gradient">-->
+<body> <!-- class="background--gradient">-->
 
 	<!--
 		page-header--glass - задний фон, при открытии glass-block -- rgba(7, 5, 0, 0.6)
 		page-header--transparent - задний фон, при открытии workers-block -- transparent
 	-->
-	<header class="page-header page-header--transparent">
+	<header class="page-header">
 		<div class="page-header-wrapper">
 		<div class="page-header__logo-wrapper">
 			<svg class="page-header__logo" width="128" height="106" viewBox="0 0 128 106" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +41,7 @@ page-header.less стр. 15
 					<a href="#">Проекты</a>
 				</li>
 				<li class="main-nav__list-item">
-					<a href="#">О нас</a>
+					<a id="about_us" href="#">О нас</a>
 				</li>
 				<li class="main-nav__list-item">
 					<a href="#">Услуги и цены</a>
@@ -106,7 +106,7 @@ page-header.less стр. 15
 
 		</div>
 
-		<div class="workers-block workers-block--opened">
+		<div class="workers-block workers-block--closed">
 			<section class="worker__slider worker__slider--active">
 				<div class="worker__slider-prewiew">
 					<h3>Дарья Горшакова</h3>
@@ -339,7 +339,7 @@ page-header.less стр. 15
 					<button class="page-footer__scroll-btn">scroll</button>
 				</div>
 				<div class="page-footer__table-wrapper">
-					<table class="page-footer__table page-footer__table--opened">
+					<table class="page-footer__table page-footer__table--closed">
 						<tr>
 							<th>100 +</th>
 							<th>8 лет</th>
@@ -365,7 +365,7 @@ page-header.less стр. 15
 
 
 
-
-
+<script src="scripts/jquery-3.4.1.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>
