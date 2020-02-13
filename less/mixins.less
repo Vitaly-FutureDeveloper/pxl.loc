@@ -23,3 +23,19 @@
 	padding: 0;
 	margin: 0;
 }
+
+.link-text-decoration(@color){
+	&::after{
+		content: "";
+
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		width: auto;
+		height: 1px;
+
+		background-color: @color;
+	}
+}

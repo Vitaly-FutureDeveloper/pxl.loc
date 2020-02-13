@@ -134,7 +134,7 @@ animation-timing-function: ease;
 	position: relative;
 	@keyframes text-show{
 		0%{
-			bottom: -50%;
+			bottom: -80%;
 		}
 		100%{
 			bottom: 0;
@@ -144,25 +144,58 @@ animation-timing-function: ease;
 	animation-duration: @time;
 	animation-timing-function: @type;
 }
-
 .animation__block-hide(@time, @type){
 	position: relative;
 	@keyframes block-hide{
 		0%{
-			//top: 0%;
 			background-position-y: 0;
 			background-image: url("../img/MaskGroup.png");
-			//background-image: radial-gradient(circle at 99vw 70vh, white, rgb(230, 230, 230));
 		}
 		100%{
-			//top: 100%;
 			background-position-y: -1080px;
 			background-image: url("../img/MaskGroup.png");
-			//background-image: radial-gradient(circle at 99vw 70vh, white, rgb(230, 230, 230));
 		}
 	}
 	animation-name: block-hide;
 	animation-duration: @time;
 	animation-timing-function: @type;
 	animation-fill-mode: forwards;
+}
+
+.animation__blocks-slider(@time, @type){
+	position: relative;
+	@keyframes show-blocks{
+		0%{
+			bottom: 0;
+			right: -100px;
+		}
+		100%{
+			bottom: 0;
+			right: 0px;
+		}
+	}
+	animation-name: show-blocks;
+	animation-duration: @time;
+	animation-timing-function: @type;
+	animation-fill-mode: backwards;
+}
+
+.animation__blocks-foto--show(@time, @type){
+	position: relative;
+	@keyframes show-foto{
+		0%{
+			width: 150%;
+			top: -35%;
+			left: -25%;
+		}
+		100%{
+			width: 100%;
+			top: 0%;
+			left: 0%;
+		}
+	}	
+	animation-name: show-foto;
+	animation-duration: @time;
+	animation-timing-function: @type;
+	animation-fill-mode: backwards;
 }
