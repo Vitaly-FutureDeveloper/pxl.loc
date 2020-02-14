@@ -1,3 +1,9 @@
+/* ОГЛАВЛЕНИЕ */
+// 7 - 70 - Функции для переходов по страницам
+// 77 -112 - Функции для слайдеров
+// 117 - 130 - События: нажатий, скролов
+// 132 - 153 - Смена слайдеров по скроллу
+
 //Функция очистки Экрана
 function cleaner(){
 	$('.page-header').removeClass('page-header--glass page-header--transparent');
@@ -16,8 +22,8 @@ function cleaner(){
 }
 
 //Клик на scroll
-function scroll(evt){
-	evt.preventDefault();
+function scroll(){
+	//evt.preventDefault();
 	try{
 	if( $('.glass-block').hasClass('glass-block--opened') ){
 
@@ -55,56 +61,116 @@ function glassOpen(evt){
 		$('.glass-block').removeClass('glass-block--closed');
 		$('.glass-block').addClass('glass-block--opened');
 
-		$('.page-footer').toggleClass('page-footer--opened');
+		$('.page-footer').addClass('page-footer--opened');
 	} catch {
 		console.log("Ошибка открытия о нас");
 	}
 }
 
-try{
-    var slideIndex = 1,
-        slides = document.querySelectorAll('.worker__slider'),
-        dotsWrap = document.querySelector('.workers-block--toggles'),
-        dots = document.querySelectorAll('.workers-block__button-wrapper--active button');
-
-    showSlides(slideIndex);
-
-    function showSlides(n) {
-        if (n > slides.length)
-            slideIndex = 1;
-        if (n < 1)
-            slideIndex = slides.length;
-
-        slides.forEach((item) => item.style.display = 'none');
-
-        slides[slideIndex - 1].style.display = 'flex';
-        slides[slideIndex - 1].classList.add('worker__slider--active');
-        dots[slideIndex - 1].click();
-    }
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlides(n) {
-        showSlides(slideIndex = n);
-    }
-
-    dotsWrap.addEventListener('click', function (event) {
-        for (let i = 0; i < dots.length + 1; i++) {
-            if (event.target.classList.contains('workers-block__button-slider') && event.target == dots[i - 1]) {
-                currentSlides(i);
-            }
-        }
-    });
-
-
-    setInterval(() => plusSlides(1), 8000);
-
-} catch { 
-    console.log('Ошибка или отсуствие слайдеров'); 
+function animateText(){
+	$('.worker__slider p, .worker__slider h3, .worker__slider-text-wrap p')
+		.addClass('shadow-anim');
 }
 
+
+//Слайдеры
+var sliderIndex = 1;
+var slides = $('.worker__slider');
+var sliderButtonsWrap = $('.workers-block--toggles');
+var sliderButtons = $('.workers-block__button-wrapper');
+
+function showSlides(n, delegate=false){
+
+	if(n > slides.length){
+		sliderIndex = 1;
+	}
+	if(n < 1){
+		sliderIndex = slides.length;
+	}
+
+	//sliderButtons.removeClass('workers-block__button-wrapper--active');
+	//Удалена пробная версия, которая отключает все кнопки, перед запуском
+
+	slides.removeClass('worker__slider--active');
+
+	if(sliderIndex <= 1){
+		setTimeout( () => sliderButtons[sliderIndex - 0].classList.add('workers-block__button-wrapper--active'), 300 );
+	} else if (sliderIndex > 1 && delegate != true) {
+		setTimeout( () => sliderButtons[sliderIndex - 1].classList.remove('workers-block__button-wrapper--active'), 300 );
+	}
+
+	slides[sliderIndex - 1].classList.add('worker__slider--active');
+	
+
+	if(delegate != true) // При нажатии на "сотрудника" - фиксит баг с излишним перебором
+		setTimeout( () => sliderButtons[sliderIndex + 1].classList.add('workers-block__button-wrapper--active'), 700 );
+	setTimeout( () => sliderButtons[sliderIndex + 2].classList.add('workers-block__button-wrapper--active'), 1200 );
+
+}
+
+function plusSlides(n){
+	showSlides(sliderIndex += n);
+		//animateText();
+}
+
+function currentSlide(n, delegate=false){
+	showSlides(sliderIndex = n, delegate);
+		animateText();
+}
+
+//showSlides();
+
+//События//
 $('#about_us').on('click', glassOpen);
-$('.page-footer__scroll-btn').on('click', scroll);
-$(window).scroll(scroll);
+$('.page-footer__scroll-btn').on('click', function(){
+	scroll();
+	showSlides();
+});
+$(window).scroll(function(){
+	if( $('.glass-block').hasClass('glass-block--opened') )
+		scroll();
+
+	showSlides();
+});
+
+$('.page-footer__scroll-btn').on('click', () => plusSlides(1));
+
+sliderButtonsWrap.on('click', function(evt){
+	for(let i = 0; i < sliderButtons.length + 1; i++){
+		if( evt.target.classList.contains('slider-button-img') &&
+			evt.target == $('.slider-button-img')[i - 1]){
+			currentSlide(i, true); //true - для запрета удаления первой кнопки переключения
+			//Удаление кнопки на которую произведён клик
+			evt.target.offsetParent.classList.remove('workers-block__button-wrapper--active');
+		}
+	}
+});
+
+$(window).scroll(function(){
+	//Отрубаем выполнение, если мы не на странице
+	if( $('.workers-block').hasClass('workers-block--closed')){	
+		//console.log(pageYOffset);
+		if(pageYOffset <= 50 && sliderIndex != 1)
+			currentSlide(1);
+		else if(pageYOffset >= 150 && sliderIndex != 2)
+			currentSlide(2);
+		else if(pageYOffset >= 300 && sliderIndex != 3)
+			currentSlide(3);
+		else if(pageYOffset <= 400 && sliderIndex != 4)
+			currentSlide(4);
+		else if(pageYOffset >= 470 && sliderIndex != 5)
+			currentSlide(5);
+		else if(pageYOffset >= 500 && sliderIndex != 6)
+			currentSlide(6);
+		else if(pageYOffset <= 580 && sliderIndex != 7)
+			currentSlide(7);
+		else if(pageYOffset >= 620 && sliderIndex != 8)
+			currentSlide(8);
+		else if(pageYOffset >= 700 && sliderIndex != 9)
+			currentSlide(9);
+	}	
+});
+
+//mock Отладка страницы слайдеров, чтоб вручную не переключать
+$('#about_us').click();
+$('.page-footer__scroll-btn').click();

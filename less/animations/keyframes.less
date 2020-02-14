@@ -129,7 +129,6 @@ animation-timing-function: ease;
 /*
 //Анимация перехода на блок workers-block >>
 */
-
 .animation__block-show(@time, @type){
 	position: relative;
 	@keyframes text-show{
@@ -168,10 +167,12 @@ animation-timing-function: ease;
 		0%{
 			bottom: 0;
 			right: -100px;
+			opacity: 0;
 		}
 		100%{
 			bottom: 0;
 			right: 0px;
+			opacity: 1;
 		}
 	}
 	animation-name: show-blocks;
@@ -195,6 +196,45 @@ animation-timing-function: ease;
 		}
 	}	
 	animation-name: show-foto;
+	animation-duration: @time;
+	animation-timing-function: @type;
+	animation-fill-mode: backwards;
+}
+.animation__blocks-foto--show-2(@time, @type){
+	position: relative;
+	@keyframes show-foto-2{
+		0%{
+			width: 30%;
+			bottom: -35%;
+			right: -25%;
+		}
+		100%{
+			width: 100%;
+			top: 0%;
+			left: 0%;
+		}
+	}	
+	animation-name: show-foto-2;
+	animation-duration: @time;
+	animation-timing-function: @type;
+	animation-fill-mode: backwards;
+}
+
+//Анимация тени текста workers-block
+.animation__blocks-foto--show-2(@time, @type){
+	position: relative;
+	@keyframes shadow-left{
+		0%{
+			text-shadow: 0px 0 0 rgba(0, 0, 0, 0.2);
+		}
+		50%{
+			text-shadow: 0px 0 0 rgba(0, 0, 0, 0.15);
+		}
+		100%{
+			text-shadow: -350px 0 0 rgba(0, 0, 0, 0.10);
+		}
+	}	
+	animation-name: shadow-left;
 	animation-duration: @time;
 	animation-timing-function: @type;
 	animation-fill-mode: backwards;
