@@ -239,3 +239,50 @@ animation-timing-function: ease;
 	animation-timing-function: @type;
 	animation-fill-mode: backwards;
 }
+
+.animation__buttons--off(@time){
+	position: relative;
+	@keyframes img-off{
+		0%{
+			opacity:1;
+			width: auto;
+			top: 0;
+			left: 0;
+		}
+		100%{
+			opacity: 0;
+			width: 680px;
+			top: -85vh;
+			left: -31vw;
+		}
+	}
+	animation-name: img-off;
+	animation-duration: @time;
+	animation-timing-function: linear;
+	animation-fill-mode: backwards;
+}
+
+/*
+//Анимация перехода на блок workers-block <<
+*/
+
+/*
+//Анимация на блок видео
+*/
+.animation__video-close(@time, @deg){
+	@keyframes video-deg{
+		0%{
+			transform: rotate(@deg);
+		}
+		50%{
+			transform: rotate(0deg);
+		}
+		100%{
+			transform: rotate(@deg);
+		}
+	}
+	animation-name: video-deg;
+	animation-duration: @time;
+	animation-timing-function: linear;
+	animation-fill-mode: both;
+}

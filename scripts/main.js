@@ -1,8 +1,10 @@
 /* ОГЛАВЛЕНИЕ */
-// 7 - 70 - Функции для переходов по страницам
-// 77 -112 - Функции для слайдеров
-// 117 - 130 - События: нажатий, скролов
-// 132 - 153 - Смена слайдеров по скроллу
+// 7 - 78 - Функции для переходов по страницам
+// 80 - 85 - Функции для подключения анимаций
+// 90 -130 - Функции для слайдеров
+// 130 - 165 - События: нажатий, скролов
+// 167 - 190 - Смена слайдеров по скроллу
+// 212 - 215 - Отладочные функции (раскомментировать)
 
 //Функция очистки Экрана
 function cleaner(){
@@ -20,7 +22,6 @@ function cleaner(){
 	$('.workers-block').addClass('workers-block--closed');
 		$('.workers-block').removeClass('workers-block--opened');
 }
-
 //Клик на scroll
 function scroll(){
 	//evt.preventDefault();
@@ -51,7 +52,6 @@ function scroll(){
 function glassOpen(evt){
 	evt.preventDefault();
 	try{
-
 		cleaner();
 
 		$('.page-header').addClass('page-header--glass');
@@ -67,11 +67,23 @@ function glassOpen(evt){
 	}
 }
 
+//Обраотка открытия/закрытия окна видео
+function videoOpen(){
+	$('.video-popup').addClass('video-popup--opened');
+	$('.video-popup').fadeTo('1200ms', 1);
+}
+function videoClose(){
+	$('.video-popup').fadeOut();
+	setTimeout( () =>
+		$('.video-popup').removeClass('video-popup--opened'), 1000
+	);
+}
+
+//Анимации
 function animateText(){
 	$('.worker__slider p, .worker__slider h3, .worker__slider-text-wrap p')
 		.addClass('shadow-anim');
 }
-
 
 //Слайдеры
 var sliderIndex = 1;
@@ -118,10 +130,12 @@ function currentSlide(n, delegate=false){
 		animateText();
 }
 
-//showSlides();
-
 //События//
 $('#about_us').on('click', glassOpen);
+
+$('.glass-block__rewiews-video').on('click', videoOpen);
+$('.video-popup--close-toggle').on('click', videoClose);
+
 $('.page-footer__scroll-btn').on('click', function(){
 	scroll();
 	showSlides();
@@ -140,8 +154,13 @@ sliderButtonsWrap.on('click', function(evt){
 		if( evt.target.classList.contains('slider-button-img') &&
 			evt.target == $('.slider-button-img')[i - 1]){
 			currentSlide(i, true); //true - для запрета удаления первой кнопки переключения
+
+				evt.target.classList.add('workers__button--off-animate');
+
 			//Удаление кнопки на которую произведён клик
-			evt.target.offsetParent.classList.remove('workers-block__button-wrapper--active');
+			setTimeout( () =>
+				evt.target.offsetParent.classList.remove('workers-block__button-wrapper--active'), 
+			2000);
 		}
 	}
 });
@@ -171,6 +190,27 @@ $(window).scroll(function(){
 	}	
 });
 
+
+/*
+//Наведение мыши на закрыть видео НЕ ПОЛУЧИЛОСЬ
+$('.video-popup--close-toggle').mouseover(
+	() => $('.video-popup--close-toggle').addClass('video-popup--close-toggle--unhover')
+);
+
+/*hover(
+	function(){
+		$('.video-popup--close-toggle').removeClass('video-popup--close-toggle--unhover');
+	},
+	function(){ 
+		$('.video-popup--close-toggle').addClass('video-popup--close-toggle--unhover');
+		/*setTimeout( () => 
+			$('.video-popup--close-toggle').removeClass('video-popup--close-toggle--unhover'),
+		1500);
+	}
+);
+*/
+/*
 //mock Отладка страницы слайдеров, чтоб вручную не переключать
 $('#about_us').click();
 $('.page-footer__scroll-btn').click();
+*/
