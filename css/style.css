@@ -311,17 +311,6 @@ input[type='radio'].visually-hidden {
   height: 1px;
   background-color: rgba(7, 5, 0, 0.4);
 }
-/*.page-main{
-	background-color: white;
-	background-image: url("../img/MaskGroup.png");
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-.background--gradient {
-	& .page-main{
-		background: transparent;
-	}
-}*/
 .page-main__header {
   position: absolute;
   width: 480px;
