@@ -9,7 +9,7 @@
 //Функция очистки Экрана
 function cleaner(){
 	$('.page-header').removeClass('page-header--glass page-header--transparent');
-	$('.page-main__header-title').addClass('page-main__header-title--glass page-main__header-title--workers');
+	$('.page-main__header-title').removeClass('page-main__header-title--glass page-main__header-title--workers');
 
 	$('.glass-block').addClass('glass-block--closed');
 		$('.glass-block').removeClass('glass-block--opened');
@@ -117,7 +117,6 @@ function showSlides(n, delegate=false){
 	if(delegate != true) // При нажатии на "сотрудника" - фиксит баг с излишним перебором
 		setTimeout( () => sliderButtons[sliderIndex + 1].classList.add('workers-block__button-wrapper--active'), 700 );
 	setTimeout( () => sliderButtons[sliderIndex + 2].classList.add('workers-block__button-wrapper--active'), 1200 );
-
 }
 
 function plusSlides(n){
@@ -140,11 +139,12 @@ $('.page-footer__scroll-btn').on('click', function(){
 	scroll();
 	showSlides();
 });
-$(window).scroll(function(){
-	if( $('.glass-block').hasClass('glass-block--opened') )
-		scroll();
 
-	showSlides();
+$(window).scroll(function(){
+	if( $('.glass-block').hasClass('glass-block--opened') && pageYOffset > 100 ){
+		scroll();
+		showSlides();
+	}
 });
 
 $('.page-footer__scroll-btn').on('click', () => plusSlides(1));
@@ -169,13 +169,13 @@ $(window).scroll(function(){
 	//Отрубаем выполнение, если мы не на странице
 	if( $('.workers-block').hasClass('workers-block--closed')){	
 		//console.log(pageYOffset);
-		if(pageYOffset <= 50 && sliderIndex != 1)
+		if(pageYOffset <= 200 && sliderIndex != 1)
 			currentSlide(1);
-		else if(pageYOffset >= 150 && sliderIndex != 2)
+		else if(pageYOffset >= 250 && sliderIndex != 2)
 			currentSlide(2);
 		else if(pageYOffset >= 300 && sliderIndex != 3)
 			currentSlide(3);
-		else if(pageYOffset <= 400 && sliderIndex != 4)
+		else if(pageYOffset >= 400 && sliderIndex != 4)
 			currentSlide(4);
 		else if(pageYOffset >= 470 && sliderIndex != 5)
 			currentSlide(5);
@@ -209,8 +209,7 @@ $('.video-popup--close-toggle').mouseover(
 	}
 );
 */
-/*
-//mock Отладка страницы слайдеров, чтоб вручную не переключать
-$('#about_us').click();
-$('.page-footer__scroll-btn').click();
-*/
+
+//mock Отладка страниц glass-block и слайдеров, чтоб вручную не переключать
+//$('#about_us').click();
+//$('.page-footer__scroll-btn').click();

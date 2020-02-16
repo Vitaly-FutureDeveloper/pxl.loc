@@ -8,6 +8,8 @@
 	flex-direction: row;
 	align-items: center;
 
+	padding-top: 100px;
+
 	background: transparent;
 
 	.animation__block-show(2s, linear);
@@ -27,7 +29,10 @@
 
 .worker__slider-prewiew{
 	margin-left: 240px;
+	margin-top: -70px;
 	width: 265px;
+
+	z-index: 2;
 
 	& h3{
 		font-family: Oswald;
@@ -61,8 +66,16 @@
 		}
 	}
 }
+.worker__slider-image-wrap{
+	width: 610px;
+	margin-left: -15px;
+
+	z-index: 1;
+}
 .worker__slider-text-wrap{
 	width: 480px;
+	margin-top: -270px;
+	margin-left: -60px;
 
 	& p{
 		font-family: Merriweather;
@@ -82,8 +95,8 @@
 /* Переключатели на слайдеры */
 .workers-block--toggles{
 	position: absolute;
-	bottom: -40px;
-	right: -50px;
+	bottom: 60px;
+	right: -30px;
 
 	display: flex;
 	flex-direction: row;

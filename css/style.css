@@ -88,25 +88,25 @@
 @font-face {
   font-family: "Oswald";
   src: url("fonts/oswald-medium.ttf") format("ttf");
-  font-weight: 500;
+  font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Oswald";
   src: url("fonts/oswald-mediumitalic.ttf") format("ttf");
-  font-weight: 500;
+  font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: "Oswald";
   src: url("fonts/oswald-regular.ttf") format("ttf");
-  font-weight: 400;
+  font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Oswald";
   src: url("fonts/oswald-regularitalic.ttf") format("ttf");
-  font-weight: 400;
+  font-weight: normal;
   font-style: italic;
 }
 html {
@@ -115,13 +115,13 @@ html {
 }
 body {
   width: 1920px;
-  height: 100vh;
+  height: 1080px;
   margin: 0 auto;
   font-family: Oswald, Merriweather, "PT Sans", Arial, "sans-serif";
   background-color: white;
   background-image: url("../img/MaskGroup.png");
   background-repeat: no-repeat;
-  background-size: 100vw 100vh;
+  background-size: 1920px 1016px;
   overflow: visible;
 }
 body.background--gradient {
@@ -178,8 +178,8 @@ input[type='radio'].visually-hidden {
 }
 .page-header {
   float: left;
-  width: 250px;
-  height: 100vh;
+  width: 240px;
+  height: 1016px;
   background: rgba(7, 5, 0, 0.3);
   padding: 0;
   margin: 0;
@@ -203,7 +203,7 @@ input[type='radio'].visually-hidden {
           justify-content: space-between;
   -webkit-box-align: center;
           align-items: center;
-  height: 90vh;
+  height: 920px;
   padding: 0;
   margin: 0;
   padding: 56px 0;
@@ -255,7 +255,7 @@ input[type='radio'].visually-hidden {
   border: 1px solid #FFFFFF;
   box-sizing: border-box;
   cursor: pointer;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .page-header--transparent .page-header__contacts-button {
   color: #070500;
@@ -270,8 +270,7 @@ input[type='radio'].visually-hidden {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
           flex-direction: row;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  justify-content: space-around;
 }
 .page-header__contacts-social-item a {
   position: relative;
@@ -316,7 +315,7 @@ input[type='radio'].visually-hidden {
   width: 480px;
   height: 32px;
   left: 480px;
-  top: 45px;
+  top: 30px;
   z-index: 10;
 }
 .page-main__header-title {
@@ -367,14 +366,16 @@ input[type='radio'].visually-hidden {
   -webkit-box-align: center;
           align-items: center;
   vertical-align: middle;
-  height: 100vh;
-  padding-left: 120px;
+  height: 1016px;
+  padding-left: 80px;
+  padding-top: -70px;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 5;
 }
 .glass-block__rewiews {
-  width: 670px;
+  width: 480px;
   padding: 0;
+  margin-top: -150px;
 }
 .glass-block__rewiews .rewiews-quote-title {
   position: relative;
@@ -385,6 +386,7 @@ input[type='radio'].visually-hidden {
   line-height: 64px;
   width: 700px;
   color: #FFFFFF;
+  margin-bottom: 0;
 }
 .glass-block__rewiews .rewiews-quote-title::before {
   content: "«";
@@ -405,7 +407,7 @@ input[type='radio'].visually-hidden {
   color: #FFFFFF;
 }
 .glass-block__rewiews-quote {
-  margin-bottom: 160px;
+  margin-bottom: 105px;
   position: relative;
   -webkit-animation-name: glass-block--open;
           animation-name: glass-block--open;
@@ -439,6 +441,9 @@ input[type='radio'].visually-hidden {
   }
 }
 .glass-block__rewiews-video {
+  margin: 0;
+  padding: 0;
+  margin-left: -53px;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -563,6 +568,7 @@ input[type='radio'].visually-hidden {
   color: #FFFFFF;
 }
 .glass-block__advantages {
+  margin-top: -135px;
   width: 480px;
   position: relative;
   -webkit-animation-name: glass-block--open;
@@ -604,6 +610,7 @@ input[type='radio'].visually-hidden {
           flex-direction: row;
   -webkit-box-align: center;
           align-items: center;
+  padding-top: 100px;
   background: transparent;
   position: relative;
   -webkit-animation-name: text-show;
@@ -725,7 +732,9 @@ input[type='radio'].visually-hidden {
 }
 .worker__slider-prewiew {
   margin-left: 240px;
+  margin-top: -70px;
   width: 265px;
+  z-index: 2;
 }
 .worker__slider-prewiew h3 {
   font-family: Oswald;
@@ -818,8 +827,15 @@ input[type='radio'].visually-hidden {
     text-shadow: -350px 0 0 rgba(0, 0, 0, 0.1);
   }
 }
+.worker__slider-image-wrap {
+  width: 610px;
+  margin-left: -15px;
+  z-index: 1;
+}
 .worker__slider-text-wrap {
   width: 480px;
+  margin-top: -270px;
+  margin-left: -60px;
 }
 .worker__slider-text-wrap p {
   font-family: Merriweather;
@@ -868,8 +884,8 @@ input[type='radio'].visually-hidden {
 /* Переключатели на слайдеры */
 .workers-block--toggles {
   position: absolute;
-  bottom: -40px;
-  right: -50px;
+  bottom: 60px;
+  right: -30px;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -990,12 +1006,12 @@ input[type='radio'].visually-hidden {
   display: none;
 }
 .page-footer--opened {
-  position: fixed;
-  bottom: -3vh;
+  position: absolute;
+  bottom: -100px;
   left: 0;
   height: 10vh;
   width: 100vw;
-  margin-left: 250px;
+  margin-left: 135px;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -1022,6 +1038,7 @@ input[type='radio'].visually-hidden {
   box-sizing: border-box;
   cursor: pointer;
   border: none;
+  margin-top: -15px;
 }
 .page-footer__scroll-btn--black {
   color: #070500;
@@ -1131,6 +1148,10 @@ input[type='radio'].visually-hidden {
 /*Если открыта панель слайдеров О НАС*/
 .background--gradient .page-footer__table {
   display: none;
+}
+.background--gradient .page-footer {
+  bottom: 70px;
+  margin-left: 10px;
 }
 .video-popup {
   display: none;

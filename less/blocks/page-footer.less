@@ -6,14 +6,14 @@
 	display: none;
 
 	&--opened{
-		position: fixed;
-		bottom: -3vh;
+		position: absolute;
+		bottom: -100px;
 		left: 0;
 	
 		height: 10vh;
 		width: 100vw;
 	
-		margin-left: 250px;
+		margin-left: 135px;
 	
 		display: flex;
 		flex-direction: row;
@@ -29,6 +29,8 @@
 .page-footer__scroll-btn{
 	.buttons();
 	border: none;
+
+	margin-top: -15px;
 
 	&--black{
 		color: #070500;
@@ -99,5 +101,10 @@
 .background--gradient{
 	& .page-footer__table {
 		display: none;
+	}
+
+	& .page-footer{
+		bottom: 70px;
+		margin-left: 10px;
 	}
 }
