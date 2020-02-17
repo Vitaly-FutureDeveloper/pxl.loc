@@ -88,13 +88,13 @@
 @font-face {
   font-family: "Oswald";
   src: url("fonts/oswald-medium.ttf") format("ttf");
-  font-weight: normal;
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Oswald";
   src: url("fonts/oswald-mediumitalic.ttf") format("ttf");
-  font-weight: normal;
+  font-weight: 500;
   font-style: italic;
 }
 @font-face {
@@ -285,6 +285,7 @@ input[type='radio'].visually-hidden {
   text-decoration: none;
   color: #FFFFFF;
   opacity: 0.4;
+  cursor: pointer;
 }
 .page-header__contacts-social-item a::after {
   content: "";
@@ -945,9 +946,9 @@ input[type='radio'].visually-hidden {
   }
   100% {
     opacity: 0;
-    width: 680px;
-    top: -85vh;
-    left: -31vw;
+    width: 610px;
+    top: -80vh;
+    left: -30vw;
   }
 }
 @keyframes img-off {
@@ -959,9 +960,9 @@ input[type='radio'].visually-hidden {
   }
   100% {
     opacity: 0;
-    width: 680px;
-    top: -85vh;
-    left: -31vw;
+    width: 610px;
+    top: -80vh;
+    left: -30vw;
   }
 }
 .workers-block__button-wrapper--active {

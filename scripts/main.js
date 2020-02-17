@@ -141,7 +141,7 @@ $('.page-footer__scroll-btn').on('click', function(){
 });
 
 $(window).scroll(function(){
-	if( $('.glass-block').hasClass('glass-block--opened') && pageYOffset > 100 ){
+	if( $('.glass-block').hasClass('glass-block--opened') && pageYOffset > 170 ){
 		scroll();
 		showSlides();
 	}
@@ -169,7 +169,7 @@ $(window).scroll(function(){
 	//Отрубаем выполнение, если мы не на странице
 	if( $('.workers-block').hasClass('workers-block--closed')){	
 		//console.log(pageYOffset);
-		if(pageYOffset <= 200 && sliderIndex != 1)
+		if(pageYOffset <= 200 && pageYOffset >= 170 && sliderIndex != 1)
 			currentSlide(1);
 		else if(pageYOffset >= 250 && sliderIndex != 2)
 			currentSlide(2);
